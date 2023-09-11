@@ -1,0 +1,27 @@
+<!--make a start page for the login-->
+
+<!DOCTYPE html>
+<html data-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %} - My Website</title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="h-screen w-screen flex flex-col justify-center items-center">
+        {%with messages = get_flashed_messages()%}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="max-w-3xl alert alert-warning mb-6 self-top justify-self-center">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}
+        
+
+        {% endblock %}
+        
+        
+    </body>
+</html>
