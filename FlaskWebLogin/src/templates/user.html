@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+    {% block content %}
+    <div class="card bg-base-300 p-8 rounded-lg shadow-md w-96">
+        <h1>Success</h1>
+        <p>You are logged in as {{ user.name }}</p>
+        <p>Your email is {{ user.email }}</p>
+        <form action="{{url_for('logout')}}" method="post">
+            <input type="submit" value="logout" class="btn btn-primary w-full text-white p-2 rounded-md hover:btn-primary-focus">
+        </form>
+    </div>
+    {% endblock %}

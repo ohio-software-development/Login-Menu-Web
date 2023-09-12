@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+        {% block title %}Signup{% endblock %}
+        {% block content %}
+        <div class="flex flex-col items-center">
+            <div class="bg-base-300 card p-8 rounded-lg shadow-md w-96">
+                <h1 class="mb-4 text-xl font-semibold">Signup</h1>
+                <form action="{{url_for('signup')}}" method="post" class="space-y-4">
+                    <input type="text" name="username" placeholder="Username" class="mt-1 p-2 w-full rounded-md">
+                    <input type="text" name="email" placeholder="Email" class="mt-1 p-2 w-full rounded-md">
+                    <input type="password" name="password" placeholder="Password" class="mt-1 p-2 w-full rounded-md">
+                    <input type="submit" value="Signup" class="btn btn-primary w-full text-white p-2 rounded-md hover:btn-primary-focus">
+                </form>
+            </div>
+            <a href="{{url_for('login')}}" class="btn inline-block btn-secondary text-white p-2 rounded-md hover:btn-secondary-focus self-end justify-self-end mt-4">Have an account? Login</a>
+        <div>
+        {% endblock %}
